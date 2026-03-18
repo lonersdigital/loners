@@ -3,157 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loners Digital Services</title>
+    <title>Loners Digital | Professional Services</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        body { background-color: #0b0b0b; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        :root { --primary-green: #25d366; --dark-bg: #0b0b0b; --card-bg: #1a1a1a; }
         
-        /* Header & Logo */
-        header { background-color: #1a1a1a; padding: 30px 20px; text-align: center; border-bottom: 2px solid #333; }
-        .header-logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #25d366; margin-bottom: 10px; }
-        header h1 { font-size: 22px; margin: 0; letter-spacing: 1px; }
+        body { background-color: var(--dark-bg); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
 
-        /* Grid System kwa ajili ya kadi mbili mbili */
-        .container { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 800px; margin: auto; }
-        
-        .card { background-color: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 10px; text-align: center; transition: 0.3s; }
-        .card img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
-        .card h3 { font-size: 13px; margin: 5px 0; text-transform: uppercase; color: #fff; }
-        .price { color: #00ff00; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
-        
-        .btn-whatsapp { background-color: #25d366; color: white; padding: 8px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 12px; display: block; }
-
-        /* Footer & Social Icons */
-        footer { background-color: #1a1a1a; padding: 40px 20px; text-align: center; margin-top: 40px; border-top: 2px solid #333; }
-        .social-icons { display: flex; justify-content: center; gap: 25px; margin: 20px 0; }
-        .social-icons a { font-size: 28px; transition: 0.3s; text-decoration: none; }
-        .fa-instagram { color: #E1306C; }
-        .fa-tiktok { color: #ffffff; }
-        .fa-whatsapp { color: #25d366; }
-        .copyright { color: #555; font-size: 11px; margin-top: 20px; }
-
-        /* Floating WhatsApp Button */
-        .floating-wa {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            z-index: 100;
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(26, 26, 26, 0.95);
+            padding: 15px 20px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            text-decoration: none;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
         }
+        .nav-logo { font-weight: bold; color: var(--primary-green); font-size: 20px; text-decoration: none; }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: 500; }
+        .btn-login { background: var(--primary-green); padding: 5px 15px; border-radius: 20px; color: white !important; }
 
-        @media (max-width: 480px) {
-            .container { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .card img { height: 110px; }
-            header h1 { font-size: 18px; }
-        }
+        /* Hero Section */
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a1a, #0b0b0b); }
+        .header-logo { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--primary-green); margin-bottom: 15px; object-fit: cover; }
+
+        /* About Us Section */
+        .about-section { padding: 50px 20px; max-width: 800px; margin: auto; text-align: center; border-top: 1px solid #333; }
+        .about-section h2 { color: var(--primary-green); margin-bottom: 15px; }
+
+        /* Services Grid */
+        .container { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 900px; margin: auto; }
+        .card { background-color: var(--card-bg); border: 1px solid #333; border-radius: 12px; padding: 12px; text-align: center; }
+        .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        .card h3 { font-size: 13px; margin: 5px 0; text-transform: uppercase; }
+        .price { color: var(--primary-green); font-weight: bold; font-size: 16px; margin-bottom: 10px; }
+        .btn-whatsapp { background-color: var(--primary-green); color: white; padding: 10px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 13px; display: block; }
+
+        /* Modal (Login Box) */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
+        .modal-content { background: #1a1a1a; margin: 15% auto; padding: 30px; border-radius: 15px; width: 85%; max-width: 350px; text-align: center; border: 1px solid var(--primary-green); position: relative; }
+        .modal-content input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #444; background: #333; color: white; box-sizing: border-box; }
+        .close-btn { position: absolute; right: 15px; top: 10px; color: #888; font-size: 28px; cursor: pointer; }
+
+        /* Floating WhatsApp */
+        .floating-wa { position: fixed; bottom: 20px; right: 20px; background: var(--primary-green); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 100; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+
+        @media (max-width: 480px) { .container { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="logo.jpg.jpeg" alt="Loners Digital Logo" class="header-logo">
+<nav>
+    <a href="#" class="nav-logo">LONERS</a>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="javascript:void(0)" onclick="openModal()" class="btn-login">Login</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <img src="logo.jpg.jpeg" alt="Logo" class="header-logo">
     <h1>LONERS DIGITAL</h1>
-    <p style="color: #bbb; font-size: 13px;">Creative Design & Social Media Solutions</p>
-</header>
+    <p style="color: #bbb;">Mtaalam wa Ubunifu na Huduma za Mtandaoni</p>
+    <button onclick="openModal()" style="background:var(--primary-green); border:none; padding:12px 25px; color:white; border-radius:25px; font-weight:bold; cursor:pointer; margin-top:15px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">GET STARTED</button>
+</div>
 
+<div class="about-section" id="about">
+    <h2>About Us</h2>
+    <p>Loners Digital ni kampuni ya kitanzania inayojishughulisha na kutoa huduma bora za kidijitali. Tunasaidia biashara kukua kupitia ubunifu wa nembo (logos), kadi za biashara, na usimamizi wa kurasa za kijamii kama Instagram na TikTok.</p>
+</div>
+
+<h2 style="text-align:center; margin-top: 30px;" id="services">Our Services</h2>
 <div class="container">
-    <div class="card">
-        <img src="logo.jpg.jpeg" alt="Logo">
-        <h3>Logo Branding</h3>
-        <p class="price">Tsh 25,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Logo Branding" class="btn-whatsapp">Agiza sasa</a>
-    </div>
+    <div class="card"><img src="logo.jpg.jpeg"><h3>Logo Branding</h3><p class="price">Tsh 25,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Logo" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="poster.jpg.jpeg"><h3>Poster Design</h3><p class="price">Tsh 10,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Poster" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="card.jpg.JPG"><h3>Business Cards</h3><p class="price">Tsh 15,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Card" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="flyer.jpg.JPG"><h3>Flyer Design</h3><p class="price">Tsh 10,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Flyer" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="social.jpg.JPG"><h3>TikTok 1k Followers</h3><p class="price">Tsh 15,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji TikTok Followers" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="instagram.jpg.JPG"><h3>Instagram 1k Followers</h3><p class="price">Tsh 15,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Instagram Followers" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="social.jpg.JPG"><h3>Social Media Management</h3><p class="price">Tsh 100,000+</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Social Media Management" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="meta.jpg.JPG"><h3>Meta Verified</h3><p class="price">Tsh 50,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Meta Verified" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="internationalaccount.jpg.JPG"><h3>International TikTok</h3><p class="price">Tsh 20,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Int TikTok" class="btn-whatsapp">Agiza sasa</a></div>
+    <div class="card"><img src="online.jpg.JPG"><h3>Sales Mentorship</h3><p class="price">Tsh 30,000</p><a href="https://wa.me/966598513987?text=Habari, nahitaji Mentorship" class="btn-whatsapp">Agiza sasa</a></div>
+</div>
 
-    <div class="card">
-        <img src="poster.jpg.jpeg" alt="Poster">
-        <h3>Poster Design</h3>
-        <p class="price">Tsh 10,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Poster Design" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="card.jpg.JPG" alt="Business Card">
-        <h3>Business Cards</h3>
-        <p class="price">Tsh 15,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Business Cards" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="flyer.jpg.JPG" alt="Flyer">
-        <h3>Flyer Design</h3>
-        <p class="price">Tsh 10,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Flyer Design" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="social.jpg.JPG" alt="TikTok">
-        <h3>TikTok 1k Followers</h3>
-        <p class="price">Tsh 15,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji TikTok 1k Followers" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="instagram.jpg.JPG" alt="Instagram">
-        <h3>Instagram 1k Followers</h3>
-        <p class="price">Tsh 15,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Instagram 1k Followers" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="social.jpg.JPG" alt="Social Media">
-        <h3>Social Media Management</h3>
-        <p class="price">Tsh 100,000+</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Social Media Management" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="meta.jpg.JPG" alt="Meta">
-        <h3>Meta Verified</h3>
-        <p class="price">Tsh 50,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Meta Verified" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="internationalaccount.jpg.JPG" alt="Int TikTok">
-        <h3>International TikTok</h3>
-        <p class="price">Tsh 20,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Int. TikTok Account" class="btn-whatsapp">Agiza sasa</a>
-    </div>
-
-    <div class="card">
-        <img src="online.jpg.JPG" alt="Mentorship">
-        <h3>Sales Mentorship</h3>
-        <p class="price">Tsh 30,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Online Sales Mentorship" class="btn-whatsapp">Agiza sasa</a>
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 style="color:var(--primary-green); margin-top:0;">Login</h2>
+        <input type="text" placeholder="Email / Username">
+        <input type="password" placeholder="Password">
+        <button style="width:100%; padding:12px; background:var(--primary-green); border:none; color:white; border-radius:5px; font-weight:bold; cursor:pointer;">INGIA</button>
+        <p style="font-size:12px; margin-top:15px; color:#888;">Huna akaunti? <span style="color:var(--primary-green); cursor:pointer;">Jisajili hapa</span></p>
     </div>
 </div>
 
-<a href="https://wa.me/966598513987" class="floating-wa" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/966598513987" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<footer>
-    <p style="color:#bbb; font-size:14px;">Tufuate kwenye mitandao ya kijamii:</p>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/ronnie__marcus?igsh=d2wzNzVnN2RrdWJn&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@loners_digital?_r=1&_t=ZS-94nahMhZvhk" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/966598513987" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer style="text-align:center; padding:40px 20px; background:#1a1a1a; margin-top:40px; border-top:1px solid #333;">
+    <div style="display:flex; justify-content:center; gap:25px; font-size:28px; margin-bottom:15px;">
+        <a href="https://www.instagram.com/ronnie__marcus" style="color:#E1306C;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@loners_digital" style="color:white;"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/966598513987" style="color:#25d366;"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p class="copyright">&copy; 2026 Loners Digital. All Rights Reserved.</p>
+    <p style="font-size:12px; color:#555;">&copy; 2026 Loners Digital. All Rights Reserved.</p>
 </footer>
+
+<script>
+    function openModal() { document.getElementById("loginModal").style.display = "block"; }
+    function closeModal() { document.getElementById("loginModal").style.display = "none"; }
+    window.onclick = function(e) { if(e.target == document.getElementById("loginModal")) closeModal(); }
+</script>
 
 </body>
 </html>
