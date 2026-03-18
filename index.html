@@ -5,148 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loners Digital Services</title>
     <style>
-        body {
-            background-color: #0b0b0b;
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1a1a1a;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid #333;
-        }
-        h1 { margin: 0; letter-spacing: 2px; }
-        .subtitle { color: #bbb; margin-top: 10px; }
-
-        /* Hapa ndipo tunapopanga ziwe mbili mbili */
-        .container {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Hii inatengeneza mistari miwili */
-            gap: 15px; /* Nafasi kati ya kadi na kadi */
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .card {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 { font-size: 16px; margin-bottom: 10px; text-transform: uppercase; }
-        .card p { font-size: 14px; color: #ccc; }
-        
-        .price {
-            color: #00ff00;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .btn-whatsapp:hover { background-color: #128c7e; }
-
-        /* Kwa ajili ya simu ndogo sana zikae moja moja zisije kubanana */
-        @media (max-width: 480px) {
-            .container { grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
-            .card { padding: 10px; }
-            .card h3 { font-size: 13px; }
-        }
+        body { background-color: #0b0b0b; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        header { background-color: #1a1a1a; padding: 40px 20px; text-align: center; border-bottom: 2px solid #333; }
+        .container { padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 800px; margin: auto; }
+        .card { background-color: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 10px; text-align: center; }
+        .card img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
+        .card h3 { font-size: 13px; margin: 5px 0; text-transform: uppercase; }
+        .price { color: #00ff00; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+        .btn-whatsapp { background-color: #25d366; color: white; padding: 8px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 12px; display: block; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>LONERS DIGITAL SERVICES</h1>
-    <p class="subtitle">Jipatie Huduma Bora Na Za Uhakika</p>
+    <p style="color: #bbb;">Jipatie Huduma Bora Na Za Uhakika</p>
 </header>
 
 <div class="container">
     <div class="card">
+        <img src="logo.jpg.jpeg" alt="Logo">
         <h3>Logo Branding</h3>
-        <p>1 mockup logo & Simple logo</p>
         <p class="price">Tsh 25,000</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji Logo Branding" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="poster.jpg.jpeg" alt="Poster">
         <h3>Poster Design</h3>
-        <p>1 Pro Poster</p>
         <p class="price">Tsh 10,000</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji Poster Design" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="card.jpg.JPG" alt="Business Card">
         <h3>Business Cards</h3>
-        <p>Modern & Pro Design</p>
         <p class="price">Tsh 15,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Business Cards Design" class="btn-whatsapp">Agiza sasa</a>
+        <a href="https://wa.me/966598513987?text=Habari, nahitaji Business Cards" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="flyer.jpg.JPG" alt="Flyer">
         <h3>Flyer Design</h3>
-        <p>Event or Business Flyer</p>
         <p class="price">Tsh 10,000</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji Flyer Design" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="social.jpg.JPG" alt="TikTok">
         <h3>TikTok 1k Followers</h3>
-        <p>Fast Increase</p>
         <p class="price">Tsh 15,000</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji TikTok 1k Followers" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="instagram.jpg.JPG" alt="Instagram">
         <h3>Instagram 1k Followers</h3>
-        <p>Real & Active</p>
         <p class="price">Tsh 15,000</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji Instagram 1k Followers" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="social.jpg.JPG" alt="Social Media">
         <h3>Social Media Management</h3>
-        <p>Professional Handling</p>
         <p class="price">Tsh 100,000+</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji Social Media Management" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
-        <h3>Meta Verified Bluetick</h3>
-        <p>Get Verified</p>
+        <img src="meta.jpg.JPG" alt="Meta">
+        <h3>Meta Verified</h3>
         <p class="price">Tsh 50,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji Meta Verified Bluetick" class="btn-whatsapp">Agiza sasa</a>
+        <a href="https://wa.me/966598513987?text=Habari, nahitaji Meta Verified" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
+        <img src="internationalaccount.jpg.JPG" alt="Int TikTok">
         <h3>International TikTok</h3>
-        <p>Monetized Account</p>
         <p class="price">Tsh 20,000</p>
-        <a href="https://wa.me/966598513987?text=Habari, nahitaji International TikTok Account" class="btn-whatsapp">Agiza sasa</a>
+        <a href="https://wa.me/966598513987?text=Habari, nahitaji Int. TikTok Account" class="btn-whatsapp">Agiza sasa</a>
     </div>
 
     <div class="card">
-        <h3>Online Sales Mentorship</h3>
-        <p>Master Online Selling</p>
+        <img src="online.jpg.JPG" alt="Mentorship">
+        <h3>Sales Mentorship</h3>
         <p class="price">Tsh 30,000</p>
         <a href="https://wa.me/966598513987?text=Habari, nahitaji Online Sales Mentorship" class="btn-whatsapp">Agiza sasa</a>
     </div>
